@@ -3,6 +3,6 @@
 <db dialect="org.hibernate.dialect.Oracle10gDialect" driver="oracle.jdbc.driver.OracleDriver" id="0" isolationLevel="" name="ORACLE" poolSize="1" typeName="ORACLE" url="jdbc:oracle:thin:@192.168.250.6:1521:ibrowse">
 <property name="user" value="db_financeiro"/>
 <property name="password" value="oracle"/>
-<metadata catalog="!" schema="DB_FINANCEIRO" table-name-exclude="" table-name-include="" table-name-pattern="%" table-types="TABLE"/>
+<metadata catalog="!" schema="DB_FINANCEIRO" table-name-exclude="" table-name-include="" table-name-pattern="%USUARIO%" table-types="TABLE"/>
 </db>
 </databases>
