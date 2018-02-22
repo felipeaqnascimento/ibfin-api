@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 import javax.validation.constraints.*;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Usuarios implements Serializable {

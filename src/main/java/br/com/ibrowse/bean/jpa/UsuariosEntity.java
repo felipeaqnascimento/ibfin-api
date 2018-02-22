@@ -25,6 +25,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="USUARIOS", schema="DB_FINANCEIRO" )
+@SequenceGenerator(name="SE_USUARIOS", sequenceName="SE_USUARIOS")
 // Define named queries here
 @NamedQueries ( {
   @NamedQuery ( name="UsuariosEntity.countAll", query="SELECT COUNT(x) FROM UsuariosEntity x" )
@@ -38,7 +39,7 @@ public class UsuariosEntity implements Serializable {
     //----------------------------------------------------------------------
     @Id
     @Column(name="OID_USUARIOS", nullable=false)
-    private BigDecimal oidUsuarios  ;
+    private Long oidUsuarios  ;
 
 
     //----------------------------------------------------------------------
@@ -64,7 +65,7 @@ public class UsuariosEntity implements Serializable {
     private Date       dtUltAlter   ;
 
     @Column(name="VS_VERSAO", nullable=false)
-    private BigDecimal vsVersao     ;
+    private Long vsVersao     ;
 
 
 
@@ -82,10 +83,11 @@ public class UsuariosEntity implements Serializable {
     //----------------------------------------------------------------------
     // GETTER & SETTER FOR THE KEY FIELD
     //----------------------------------------------------------------------
-    public void setOidUsuarios( BigDecimal oidUsuarios ) {
+    @Id @GeneratedValue(strategy=GenerationType.AUTO, generator="SE_USUARIOS")
+    public void setOidUsuarios( Long oidUsuarios ) {
         this.oidUsuarios = oidUsuarios ;
     }
-    public BigDecimal getOidUsuarios() {
+    public Long getOidUsuarios() {
         return this.oidUsuarios;
     }
 
@@ -141,10 +143,10 @@ public class UsuariosEntity implements Serializable {
     }
 
     //--- DATABASE MAPPING : VS_VERSAO ( NUMBER ) 
-    public void setVsVersao( BigDecimal vsVersao ) {
+    public void setVsVersao( Long vsVersao ) {
         this.vsVersao = vsVersao;
     }
-    public BigDecimal getVsVersao() {
+    public Long getVsVersao() {
         return this.vsVersao;
     }
 
